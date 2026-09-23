@@ -1,0 +1,14 @@
+{
+  "name": "How are you feeling? — QF Space",
+  "short_name": "How are you feeling?",
+  "start_url": "./index.html?lang=ar",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#004538",
+  "theme_color": "#004538",
+  "icons": [
+    { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>How Are You Feeling? — QF Space</title>
+<meta name="description" content="QF Space, Qiyada 2026: choose a feeling and receive an ayah or du’a.">
+<meta name="theme-color" content="#004538">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="How are you feeling?">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/amiri-quran-arabic.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+<!-- Ornaments, drawn once and reused -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- corner rosette: eight-point star (two squares) inside a ring -->
+    <symbol id="rosette" viewBox="-50 -50 100 100">
+      <circle r="44" class="fill-bg" />
+      <circle r="44" />
+      <circle r="38.5" class="thin" />
+      <rect x="-26" y="-26" width="52" height="52" />
+      <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)" />
+      <circle r="13" />
+      <rect x="-6.5" y="-6.5" width="13" height="13" class="solid" />
+      <rect x="-6.5" y="-6.5" width="13" height="13" transform="rotate(45)" class="solid" />
+    </symbol>
+    <!-- small eight-point star -->
+    <symbol id="star" viewBox="-10 -10 20 20">
+      <rect x="-6" y="-6" width="12" height="12" />
+      <rect x="-6" y="-6" width="12" height="12" transform="rotate(45)" />
+    </symbol>
+  </defs>
+</svg>
+
+<div id="stage">
+  <div class="frame" aria-hidden="true">
+    <svg class="corner tl"><use href="#rosette"/></svg>
+    <svg class="corner tr"><use href="#rosette"/></svg>
+    <svg class="corner bl"><use href="#rosette"/></svg>
+    <svg class="corner br"><use href="#rosette"/></svg>
+  </div>
+
+  <!-- Welcome: heading, Ar-Ra'd 28, instruction, feelings -->
+  <section id="home" class="view is-active">
+    <img class="logo" src="assets/tree.svg" alt="Qatar Foundation">
+    <h1 class="heading" data-t="heading"></h1>
+    <div class="intro"></div>
+    <div class="divider" aria-hidden="true"><i></i><svg><use href="#star"/></svg><i></i></div>
+    <p class="instruction" data-t="instruction"></p>
+    <div class="feelings"></div>
+  </section>
+
+  <!-- A feeling's ayah / du'a -->
+  <section id="verse" class="view" aria-live="polite">
+    <img class="logo small" src="assets/tree.svg" alt="Qatar Foundation">
+    <h2 class="v-title"></h2>
+    <div class="divider" aria-hidden="true"><i></i><svg><use href="#star"/></svg><i></i></div>
+    <div class="v-box"><div class="v-body"></div></div>
+    <button class="btn back" type="button" data-t="back"></button>
+  </section>
+
+  <nav class="lang">
+    <a href="?lang=en" data-lang="en" lang="en">EN</a>
+    <span class="sep">|</span>
+    <a href="?lang=ar" data-lang="ar" lang="ar">ع</a>
+  </nav>
+</div>
+
+<script src="js/content.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
