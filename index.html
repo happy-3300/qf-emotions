@@ -15,24 +15,13 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/amiri-quran-arabic.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
 <!-- Ornaments, drawn once and reused -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- corner rosette: eight-point star (two squares) inside a ring -->
-    <symbol id="rosette" viewBox="-50 -50 100 100">
-      <circle r="44" class="fill-bg" />
-      <circle r="44" />
-      <circle r="38.5" class="thin" />
-      <rect x="-26" y="-26" width="52" height="52" />
-      <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)" />
-      <circle r="13" />
-      <rect x="-6.5" y="-6.5" width="13" height="13" class="solid" />
-      <rect x="-6.5" y="-6.5" width="13" height="13" transform="rotate(45)" class="solid" />
-    </symbol>
     <!-- small eight-point star -->
     <symbol id="star" viewBox="-10 -10 20 20">
       <rect x="-6" y="-6" width="12" height="12" />
@@ -42,13 +31,6 @@
 </svg>
 
 <div id="stage">
-  <div class="frame" aria-hidden="true">
-    <svg class="corner tl"><use href="#rosette"/></svg>
-    <svg class="corner tr"><use href="#rosette"/></svg>
-    <svg class="corner bl"><use href="#rosette"/></svg>
-    <svg class="corner br"><use href="#rosette"/></svg>
-  </div>
-
   <!-- Welcome: heading, Ar-Ra'd 28, instruction, feelings -->
   <section id="home" class="view is-active">
     <img class="logo" src="assets/tree.svg" alt="Qatar Foundation">

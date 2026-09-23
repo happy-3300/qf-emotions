@@ -48,19 +48,7 @@ body {
 }
 .portrait #stage { --w: 834px; --h: 1194px; }
 
-/* ---------- Frame: double gold rule with rosettes on the corners ---------- */
-.frame { position: absolute; inset: 20px; border: 1.5px solid var(--gold); pointer-events: none; }
-.frame::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--gold-soft); }
-.frame .corner { position: absolute; width: 64px; height: 64px; }
-.frame .tl { left: -32px; top: -32px; }
-.frame .tr { right: -32px; top: -32px; }
-.frame .bl { left: -32px; bottom: -32px; }
-.frame .br { right: -32px; bottom: -32px; }
-
-#rosette, #star { fill: none; stroke: var(--gold); stroke-width: 1.5; }
-#rosette .thin { stroke-width: .8; stroke-opacity: .6; }
-#rosette .fill-bg { fill: var(--green); stroke: none; }
-#rosette .solid { fill: var(--gold); stroke: none; }
+#star { fill: none; stroke: var(--gold); stroke-width: 1.5; }
 
 .divider { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .divider i { display: block; width: 110px; height: 1px; background: linear-gradient(to var(--fade, right), transparent, var(--gold)); }
