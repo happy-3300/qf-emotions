@@ -15,7 +15,7 @@ window.QF_CONTENT = {
   intro: {
     type: 'ayah',
     en: 'Those who have faith and whose hearts find peace in the remembrance of Allah. Truly, it is in the remembrance of Allah that hearts find peace.',
-    ar: 'الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ',
+    ar: 'الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ',
     ref: { en: 'Surah Ar-Ra’d', ar: 'سورة الرعد', ayah: 28 }
   },
 
@@ -33,12 +33,12 @@ window.QF_CONTENT = {
       texts: [{
         type: 'ayah',
         en: 'If you are grateful, I will certainly give you more.',
-        ar: 'لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ',
+        ar: 'لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ',
         ref: { en: 'Surah Ibrahim', ar: 'سورة إبراهيم', ayah: 7 }
       }, {
         type: 'ayah',
         en: 'My Lord, enable me to be grateful for Your favour which You have bestowed upon me and upon my parents, and to do good deeds that please You. Make my offspring righteous; I truly repent to You, and truly I am of those who submit to You.',
-        ar: 'رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي ۖ إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ',
+        ar: 'رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي ۖ إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ',
         /* The docx says Surah An-Naml, but this wording (with "make my offspring righteous") is Al-Ahqaf 46:15. */
         ref: { en: 'Surah Al-Ahqaf', ar: 'سورة الأحقاف', ayah: 15 }
       }]
@@ -49,7 +49,7 @@ window.QF_CONTENT = {
         type: 'ayah',
         en: 'Those who have faith and whose hearts find peace in the remembrance of Allah. Truly, it is in the remembrance of Allah that hearts find peace.',
         /* The docx Arabic also appended part of Ghafir 40:44; kept to Ar-Ra'd 28 to match the English and the reference. */
-        ar: 'الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ',
+        ar: 'الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ',
         ref: { en: 'Surah Ar-Ra’d', ar: 'سورة الرعد', ayah: 28 }
       }]
     },
@@ -59,7 +59,7 @@ window.QF_CONTENT = {
         type: 'ayah',
         en: 'They rejoice in Allah’s grace and bounty, and that Allah does not discount the reward of the believers.',
         /* The docx Arabic also appended part of At-Tawbah 9:40; kept to Al 'Imran 171 to match the English and the reference. */
-        ar: 'يَسْتَبْشِرُونَ بِنِعْمَةٍ مِّنَ اللَّهِ وَفَضْلٍ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ',
+        ar: 'يَسْتَبْشِرُونَ بِنِعْمَةٍ مِنَ اللَّهِ وَفَضْلٍ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ',
         ref: { en: 'Surah Ali ’Imran', ar: 'سورة آل عمران', ayah: 171 }
       }]
     },

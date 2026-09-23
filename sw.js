@@ -1,8 +1,8 @@
 /* Network first, cache as fallback: always fresh when online, still works if the venue Wi-Fi drops.
    Bump VERSION when files are renamed or removed. */
-var VERSION = 'qf-feelings-v3';
+var VERSION = 'qf-feelings-v4';
 var FILES = [
-  './', 'index.html', 'css/style.css?v=3', 'js/content.js?v=1', 'js/app.js?v=1',
+  './', 'index.html', 'css/style.css?v=3', 'js/content.js?v=2', 'js/app.js?v=1',
   'assets/tree.svg', 'icons/icon.svg', 'icons/apple-touch-icon.png', 'manifest.webmanifest',
   'assets/fonts/QF-Regular.otf', 'assets/fonts/QF-Medium.otf', 'assets/fonts/QF-Semibold.otf',
   'assets/fonts/amiri-quran-arabic.woff2', 'assets/fonts/amiri-latin.woff2', 'assets/fonts/amiri-latin-italic.woff2'
