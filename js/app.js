@@ -37,7 +37,7 @@
     var t = item[lang];
     if (lang === 'ar') t = item.type === 'ayah' ? '﴿' + t + '﴾' : t;
     else t = '“' + t + '”';
-    parent.appendChild(el('p', 'text', t));
+    parent.appendChild(el('p', 'text ' + item.type, t));
     if (item.ref) {
       var r = lang === 'ar' ? item.ref.ar + ': ' + num(item.ref.ayah) : item.ref.en + ': ' + item.ref.ayah;
       parent.appendChild(el('div', 'ref', r));
