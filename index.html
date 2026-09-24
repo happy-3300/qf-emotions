@@ -15,20 +15,9 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/amiri-quran-arabic.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
-
-<!-- Ornaments, drawn once and reused -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <!-- small eight-point star -->
-    <symbol id="star" viewBox="-10 -10 20 20">
-      <rect x="-6" y="-6" width="12" height="12" />
-      <rect x="-6" y="-6" width="12" height="12" transform="rotate(45)" />
-    </symbol>
-  </defs>
-</svg>
 
 <div id="stage">
   <!-- Welcome: heading, Ar-Ra'd 28, instruction, feelings -->
@@ -36,7 +25,7 @@
     <img class="logo" src="assets/tree.svg" alt="Qatar Foundation">
     <h1 class="heading" data-t="heading"></h1>
     <div class="intro"></div>
-    <div class="divider" aria-hidden="true"><i></i><svg><use href="#star"/></svg><i></i></div>
+    <div class="divider" aria-hidden="true"></div>
     <p class="instruction" data-t="instruction"></p>
     <div class="feelings"></div>
   </section>
@@ -45,7 +34,7 @@
   <section id="verse" class="view" aria-live="polite">
     <img class="logo small" src="assets/tree.svg" alt="Qatar Foundation">
     <h2 class="v-title"></h2>
-    <div class="divider" aria-hidden="true"><i></i><svg><use href="#star"/></svg><i></i></div>
+    <div class="divider" aria-hidden="true"></div>
     <div class="v-box"><div class="v-body"></div></div>
     <button class="btn back" type="button" data-t="back"></button>
   </section>
@@ -58,6 +47,6 @@
 </div>
 
 <script src="js/content.js?v=3"></script>
-<script src="js/app.js?v=2"></script>
+<script src="js/app.js?v=3"></script>
 </body>
 </html>

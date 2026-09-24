@@ -22,15 +22,6 @@
     if (text != null) e.textContent = text;
     return e;
   }
-  function starSvg(cls) {
-    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    var u = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    u.setAttribute('href', '#star');
-    s.appendChild(u);
-    s.setAttribute('class', cls);
-    s.setAttribute('aria-hidden', 'true');
-    return s;
-  }
 
   /* One ayah / du'a: text in ornate brackets (Arabic ayah) or quotes (English), then its reference. */
   function renderText(item, parent) {
@@ -91,7 +82,7 @@
     vTitle.textContent = f.label[lang];
     vBody.textContent = '';
     f.texts.forEach(function (item, i) {
-      if (i) vBody.appendChild(starSvg('sep'));
+      if (i) vBody.appendChild(el('div', 'divider'));
       renderText(item, vBody);
     });
     fitVerse();

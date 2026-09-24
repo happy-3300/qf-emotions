@@ -45,13 +45,8 @@ body {
 }
 .portrait #stage { --w: 834px; --h: 1194px; }
 
-#star { fill: none; stroke: var(--gold); stroke-width: 1.5; }
-
-.divider { display: flex; align-items: center; justify-content: center; gap: 12px; }
-.divider i { display: block; width: 110px; height: 1px; background: linear-gradient(to var(--fade, right), transparent, var(--gold)); }
-.divider i:last-child { --fade: left; }
-.divider svg { width: 18px; height: 18px; }
-.divider #star, .divider use { stroke-width: 1.6; }
+/* Separator: a plain gold line (same footprint as the old star divider, so nothing moves). */
+.divider { width: 262px; height: 18px; margin: 0 auto; background: linear-gradient(var(--gold), var(--gold)) center / 100% 1px no-repeat; }
 
 /* ---------- Views ---------- */
 .view {
@@ -97,13 +92,6 @@ html[lang="en"] .intro .text { font-family: var(--scripture); font-style: italic
   transition: background-color .2s ease, transform .15s ease;
 }
 html[lang="ar"] .btn { font-size: 29px; padding-bottom: 4px; }
-/* diamond studs on the side edges */
-.btn::before, .btn::after {
-  content: ""; position: absolute; top: 50%; width: 8px; height: 8px; margin-top: -4px;
-  background: var(--gold); transform: rotate(45deg);
-}
-.btn::before { left: -4.5px; }
-.btn::after { right: -4.5px; }
 .btn:active, .btn.is-pressed { background: rgba(201, 169, 97, .22); transform: scale(.97); }
 .btn:focus { outline: none; }
 .btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 4px; }
@@ -119,7 +107,7 @@ html[lang="en"] .v-title { text-transform: uppercase; letter-spacing: .14em; fon
 .v-body .text { margin: 0; color: var(--cream); }
 html[lang="ar"] .v-body .text { font-family: var(--quran); font-size: calc(var(--fs) * 1px); line-height: 1.95; }
 html[lang="en"] .v-body .text { font-family: var(--scripture); font-size: calc(var(--fs) * .78px); line-height: 1.5; }
-.v-body .sep { display: block; width: 16px; height: 16px; margin: calc(var(--fs) * .45px) auto; opacity: .8; }
+.v-body .divider { margin: calc(var(--fs) * .45px) auto; }
 
 .ref { margin-top: 10px; font: 500 16px/1.4 var(--ui); color: var(--gold); letter-spacing: .04em; }
 html[lang="en"] .ref { text-transform: uppercase; letter-spacing: .12em; font-size: 14px; }
