@@ -1,6 +1,8 @@
 /* All page text lives here. Source: "QIYADA QF Space_WHAT IS YOUR HEART FEELING 2.docx".
    Each feeling has one or more texts. type "ayah" is shown in ﴿ ﴾ with its reference; type "dua" has no reference.
-   Quotation marks are added by the page, so leave them out of the strings. */
+   Quotation marks are added by the page, so leave them out of the strings.
+   audio: played when the feeling opens. A missing file is fine (no audio, no button). For a different file per
+   language use { ar: 'audio/happy-ar.mp3', en: 'audio/happy-en.mp3' }. */
 window.QF_CONTENT = {
   ui: {
     heading:     { en: 'How are you feeling?', ar: 'كيف حالك؟' },
@@ -22,6 +24,7 @@ window.QF_CONTENT = {
   feelings: [
     {
       id: 'happy', label: { en: 'Happy', ar: 'سعيد' },
+      audio: 'audio/happy.mp3',
       texts: [{
         type: 'dua',
         en: 'O Allah, I seek Your protection from the loss of Your favors, the removal of Your complete protection, Your sudden punishment and all that which may incur Your displeasure.',
@@ -30,6 +33,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'grateful', label: { en: 'Grateful', ar: 'ممتنّ' },
+      audio: 'audio/grateful.mp3',
       texts: [{
         type: 'ayah',
         en: 'My Lord, enable me to be grateful for Your favour which You have bestowed upon me and upon my parents, and to do good deeds that please You. Make my offspring righteous; I truly repent to You, and truly I am of those who submit to You.',
@@ -40,6 +44,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'disturbed', label: { en: 'Disturbed', ar: 'مضطرب' },
+      audio: 'audio/disturbed.mp3',
       texts: [{
         type: 'ayah',
         en: 'Those who have faith and whose hearts find peace in the remembrance of Allah. Truly, it is in the remembrance of Allah that hearts find peace.',
@@ -50,6 +55,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'hopeful', label: { en: 'Hopeful', ar: 'متفائل' },
+      audio: 'audio/hopeful.mp3',
       texts: [{
         type: 'ayah',
         en: 'They rejoice in Allah’s grace and bounty, and that Allah does not discount the reward of the believers.',
@@ -60,6 +66,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'anxious', label: { en: 'Anxious', ar: 'قلِق' },
+      audio: 'audio/anxious.mp3',
       texts: [{
         type: 'dua',
         en: 'Allah is sufficient for me. There is no god worthy of worship except Him. I have placed my trust in Him only and He is the Lord of the Magnificent Throne.',
@@ -68,6 +75,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'sad', label: { en: 'Sad', ar: 'حزين' },
+      audio: 'audio/sad.mp3',
       texts: [{
         type: 'dua',
         en: 'O Allah, I seek Your protection from anxiety and grief. I seek Your protection from inability and laziness. I seek Your protection from cowardice and miserliness, and I seek Your protection from being overcome by debt and being overpowered by men.',
@@ -76,6 +84,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'overwhelmed', label: { en: 'Overwhelmed', ar: 'مُثقَل' },
+      audio: 'audio/overwhelmed.mp3',
       texts: [{
         type: 'dua',
         en: 'O Allah, I ask You for well-being in this world and the next. O Allah, I ask You for forgiveness and well-being in my religion, in my worldly affairs, in my family and in my wealth. O Allah, conceal my faults and calm my fears. O Allah, guard me from in front of me and behind me, from my right, and from my left, and from above me. I seek protection in Your Greatness from being unexpectedly destroyed from beneath me.',
@@ -84,6 +93,7 @@ window.QF_CONTENT = {
     },
     {
       id: 'confused', label: { en: 'Confused', ar: 'حائر' },
+      audio: 'audio/confused.mp3',
       texts: [{
         type: 'dua',
         en: 'O Allah, I beg You for steadfastness in all matters and the determination to take the right course. I ask You for all that which will necessitate Your mercy and the determination to do all that which will necessitate Your forgiveness. I ask You to make me grateful for Your blessings and to worship You in an excellent manner. I ask You for a sound heart and a truthful tongue. I ask You for the good of what You know, I seek Your protection from the evil of what You know, and I seek Your forgiveness for what You know. Indeed, You are the All-Knowing of the unseen.',

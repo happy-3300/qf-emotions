@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/amiri-quran-arabic.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -36,7 +36,14 @@
     <h2 class="v-title"></h2>
     <div class="divider" aria-hidden="true"></div>
     <div class="v-box"><div class="v-body"></div></div>
-    <button class="btn back" type="button" data-t="back"></button>
+    <div class="v-actions">
+      <button class="btn back" type="button" data-t="back"></button>
+      <!-- play / pause for the feeling's audio; hidden when the feeling has none -->
+      <button class="audio-btn" type="button" aria-label="Play / Pause" hidden>
+        <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+        <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+      </button>
+    </div>
   </section>
 
   <nav class="lang">
@@ -46,7 +53,7 @@
   </nav>
 </div>
 
-<script src="js/content.js?v=4"></script>
-<script src="js/app.js?v=3"></script>
+<script src="js/content.js?v=5"></script>
+<script src="js/app.js?v=4"></script>
 </body>
 </html>

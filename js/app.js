@@ -75,7 +75,7 @@
       var f = C.feelings.filter(function (x) { return x.id === b.dataset.id; })[0];
       b.textContent = f.label[lang];
     });
-    if (current) fillVerse(current);
+    if (current) { fillVerse(current); playFor(current, false); }
   }
 
   function fillVerse(f) {
@@ -101,11 +101,13 @@
   function showFeeling(f) {
     current = f;
     fillVerse(f);
+    playFor(f, true);
     home.classList.remove('is-active');
     verse.classList.add('is-active');
   }
   function showHome() {
     current = null;
+    stopAudio();
     verse.classList.remove('is-active');
     home.classList.add('is-active');
   }
@@ -117,6 +119,62 @@
       setLang(a.dataset.lang, true);
     });
   });
+
+  /* ---------- Audio ----------
+     Each feeling's file (content.js `audio`) plays when it opens. All files are fetched once in the background and
+     played from memory: no delay on tap, and the service worker keeps a copy so they also play offline. */
+  var player = new Audio();
+  var audioBtn = verse.querySelector('.audio-btn');
+  var loaded = {}; /* src -> object URL, false if missing */
+  function audioSrc(f) {
+    var a = f && f.audio;
+    return !a ? null : typeof a === 'string' ? a : (a[lang] || a.ar || a.en || null);
+  }
+  function preloadAudio() {
+    var seen = {};
+    C.feelings.forEach(function (f) {
+      var a = f.audio; if (!a) return;
+      (typeof a === 'string' ? [a] : Object.keys(a).map(function (k) { return a[k]; })).forEach(function (src) {
+        if (seen[src]) return; seen[src] = true;
+        fetch(src).then(function (r) { return r.ok ? r.blob() : null; }).then(function (b) {
+          loaded[src] = b ? URL.createObjectURL(b) : false;
+          if (current && audioSrc(current) === src) audioBtn.hidden = !b;
+        }, function () { loaded[src] = false; });
+      });
+    });
+  }
+  /* restart: true when the feeling is opened; false on a language switch (keeps playing if the file is the same) */
+  function playFor(f, restart) {
+    var src = audioSrc(f);
+    if (!restart && player.dataset.src === src) return;
+    stopAudio();
+    if (!src || loaded[src] === false) { audioBtn.hidden = true; return; }
+    audioBtn.hidden = false;
+    player.dataset.src = src;
+    player.src = loaded[src] || src; /* not preloaded yet: stream it */
+    var p = player.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  function stopAudio() {
+    player.pause();
+    try { player.currentTime = 0; } catch (e) {}
+  }
+  /* missing or unplayable file: hide the button and make sure the player counts as stopped (so idle return still works) */
+  player.addEventListener('error', function () {
+    if (player.dataset.src) loaded[player.dataset.src] = false;
+    audioBtn.hidden = true;
+    audioBtn.classList.remove('is-playing');
+    player.pause();
+    armIdle();
+  });
+  player.addEventListener('play', function () { audioBtn.classList.add('is-playing'); stopIdle(); });
+  player.addEventListener('pause', function () { audioBtn.classList.remove('is-playing'); armIdle(); });
+  player.addEventListener('ended', function () { audioBtn.classList.remove('is-playing'); armIdle(); });
+  audioBtn.addEventListener('click', function () {
+    if (player.paused) { var p = player.play(); if (p && p.catch) p.catch(function () {}); }
+    else player.pause();
+  });
+  window.addEventListener('pagehide', stopAudio);
 
   /* ---------- Stage scaling ---------- */
   function fit() {
@@ -148,12 +206,15 @@
       document.fonts.load('30px "QF"', 'QF')
     ]).then(function () { if (current) fitVerse(); }, function () {});
   }
+  window.addEventListener('load', preloadAudio);
 
   /* ---------- Idle return ----------
-     60 s without a touch → welcome screen in Arabic, ready for the next visitor. */
+     60 s without a touch (and no audio playing) → welcome screen in Arabic, ready for the next visitor. */
   var IDLE_MS = 60000, idleTimer = null;
+  function stopIdle() { clearTimeout(idleTimer); }
   function armIdle() {
     clearTimeout(idleTimer);
+    if (!player.paused) return; /* never cut off a recitation */
     idleTimer = setTimeout(function () {
       showHome();
       if (lang !== 'ar') setLang('ar', true);

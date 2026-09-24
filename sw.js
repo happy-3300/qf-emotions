@@ -1,8 +1,8 @@
 /* Network first, cache as fallback: always fresh when online, still works if the venue Wi-Fi drops.
    Bump VERSION when files are renamed or removed. */
-var VERSION = 'qf-feelings-v9';
+var VERSION = 'qf-feelings-v10';
 var FILES = [
-  './', 'index.html', 'css/style.css?v=6', 'js/content.js?v=4', 'js/app.js?v=3',
+  './', 'index.html', 'css/style.css?v=7', 'js/content.js?v=5', 'js/app.js?v=4',
   'assets/tree.svg', 'icons/icon.svg', 'icons/apple-touch-icon.png', 'manifest.webmanifest',
   'assets/fonts/QF-Regular.otf', 'assets/fonts/QF-Medium.otf', 'assets/fonts/QF-Semibold.otf',
   'assets/fonts/amiri-quran-arabic.woff2', 'assets/fonts/amiri-latin.woff2', 'assets/fonts/amiri-latin-italic.woff2'
@@ -22,7 +22,8 @@ self.addEventListener('fetch', function (e) {
   if (e.request.method !== 'GET') return;
   e.respondWith(
     fetch(e.request).then(function (res) {
-      if (res.ok && new URL(e.request.url).origin === location.origin) {
+      /* only full 200 responses: Safari asks for audio in byte ranges (206), which the cache can't store */
+      if (res.status === 200 && new URL(e.request.url).origin === location.origin) {
         var copy = res.clone();
         caches.open(VERSION).then(function (c) { c.put(e.request, copy); });
       }
