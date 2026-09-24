@@ -39,7 +39,7 @@ window.QF_CONTENT = {
       }]
     },
     {
-      id: 'calm', label: { en: 'Calm', ar: 'هادئ' },
+      id: 'disturbed', label: { en: 'Disturbed', ar: 'مضطرب' },
       texts: [{
         type: 'ayah',
         en: 'Those who have faith and whose hearts find peace in the remembrance of Allah. Truly, it is in the remembrance of Allah that hearts find peace.',
