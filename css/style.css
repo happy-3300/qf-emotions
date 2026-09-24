@@ -119,9 +119,6 @@ html[lang="en"] .v-title { text-transform: uppercase; letter-spacing: .14em; fon
 .v-body .text { margin: 0; color: var(--cream); }
 html[lang="ar"] .v-body .text { font-family: var(--quran); font-size: calc(var(--fs) * 1px); line-height: 1.95; }
 html[lang="en"] .v-body .text { font-family: var(--scripture); font-size: calc(var(--fs) * .78px); line-height: 1.5; }
-/* Du'as are not Quran: QF font in both languages, a touch smaller since QF sets larger than Amiri. */
-html[lang="ar"] .v-body .text.dua { font-family: var(--ui); font-size: calc(var(--fs) * .8px); line-height: 1.75; }
-html[lang="en"] .v-body .text.dua { font-family: var(--ui); font-size: calc(var(--fs) * .7px); line-height: 1.55; }
 .v-body .sep { display: block; width: 16px; height: 16px; margin: calc(var(--fs) * .45px) auto; opacity: .8; }
 
 .ref { margin-top: 10px; font: 500 16px/1.4 var(--ui); color: var(--gold); letter-spacing: .04em; }
