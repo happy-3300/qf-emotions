@@ -32,11 +32,6 @@ window.QF_CONTENT = {
       id: 'grateful', label: { en: 'Grateful', ar: 'ممتنّ' },
       texts: [{
         type: 'ayah',
-        en: 'If you are grateful, I will certainly give you more.',
-        ar: 'لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ',
-        ref: { en: 'Surah Ibrahim', ar: 'سورة إبراهيم', ayah: 7 }
-      }, {
-        type: 'ayah',
         en: 'My Lord, enable me to be grateful for Your favour which You have bestowed upon me and upon my parents, and to do good deeds that please You. Make my offspring righteous; I truly repent to You, and truly I am of those who submit to You.',
         ar: 'رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي ۖ إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ',
         /* The docx says Surah An-Naml, but this wording (with "make my offspring righteous") is Al-Ahqaf 46:15. */
