@@ -38,11 +38,13 @@
     <div class="v-box"><div class="v-body"></div></div>
     <div class="v-actions">
       <button class="btn back" type="button" data-t="back"></button>
-      <!-- play / pause for the feeling's audio; hidden when the feeling has none -->
+      <!-- Play / pause for the feeling's audio. Turned off for now (audio still plays on open);
+           to bring it back, uncomment this button — app.js and style.css already handle it.
       <button class="audio-btn" type="button" aria-label="Play / Pause" hidden>
         <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
         <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
       </button>
+      -->
     </div>
   </section>
 
@@ -54,6 +56,6 @@
 </div>
 
 <script src="js/content.js?v=5"></script>
-<script src="js/app.js?v=4"></script>
+<script src="js/app.js?v=5"></script>
 </body>
 </html>

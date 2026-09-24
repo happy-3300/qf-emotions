@@ -124,7 +124,8 @@
      Each feeling's file (content.js `audio`) plays when it opens. All files are fetched once in the background and
      played from memory: no delay on tap, and the service worker keeps a copy so they also play offline. */
   var player = new Audio();
-  var audioBtn = verse.querySelector('.audio-btn');
+  /* The play/pause button is commented out in index.html for now; a detached stand-in keeps the code below working. */
+  var audioBtn = verse.querySelector('.audio-btn') || document.createElement('button');
   var loaded = {}; /* src -> object URL, false if missing */
   function audioSrc(f) {
     var a = f && f.audio;
